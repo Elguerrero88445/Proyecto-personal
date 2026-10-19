@@ -1,0 +1,237 @@
+@media (max-width: 600px) {
+    body {
+        padding: 10px 0;
+    }
+    .contenedor-regalo {
+        width: 96%;
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .titulo-animado {
+        font-size: 1.8rem;
+    }
+
+    .cuerpo-carta p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+    
+    .destacado {
+        font-size: 1rem;
+        padding: 10px;
+        margin: 15px 0;
+    }
+}
+
+
+body {
+    background-color: #53076b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.contenedor-regalo {
+    background-color: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    width: 90%;
+    max-width: 650px;
+    box-sizing: border-box;
+}
+
+.titulo-animado {
+    color: #ff477e;
+    font-size: 2rem;
+    animation: latido 1.5s infinite alternate ease-in-out;
+}
+
+.subtitulo {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.botton {
+    padding: 5%;
+    color: #53076b;
+    position: relative;
+    left: 500px;
+    top: 200px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+audio{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.boton-regalo {
+    display: inline-block;
+    background-color: #ff477e;
+    color: white;
+    padding: 12px 25px;
+    margin-top: 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.boton-regalo:hover {
+    background-color: #e03a6d;
+    transform: scale(1.05);
+}
+
+.textto-carta {
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 15px 0;
+}
+
+.animada {
+    animation: aparecer 1.2s ease-out forwards;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cuerpo-carta p {
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: .98rem;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+.destacado {
+    background-color: #fff0f5;
+    border-left: 4px solid #ff477e;
+    margin: 20px 0;
+    padding: 12px 15px;
+    font-style: italic;
+    color: #53076b;
+    font-weight: 600;
+    border-radius: 0 10px 10px 0;
+}
+
+.introduccion {
+    text-align: center !important;
+    font-weight: bold;
+    color: #53076b !important;
+}
+
+.final-amor {
+    text-align: center !important;
+    font-size: 1.1rem !important;
+    color: #ff477e !important;
+    margin-top: 25px;
+}
+
+.firma {
+    text-align: right !important;
+    font-size: 1.05rem !important;
+    font-weight: bold;
+    color: #53076b !important;
+    margin-top: 20px;
+}
+
+.firma span{
+    color:#ff477e;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f3d3df;
+}
+
+.menu a,
+.menu button {
+    color: #53076b;
+    background: none;
+    border: none;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu a:hover,
+.menu button:hover {
+    color: #ff477e;
+}
+
+.form-menu {
+    margin: 0;
+}
+
+.contador {
+    color: #53076b;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+.contador strong {
+    color: #ff477e;
+    font-size: 1.8rem;
+}
+
+.boton-bloqueado {
+    display: inline-block;
+    background-color: #e8dcef;
+    color: #53076b;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.acciones-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.acciones-admin .boton-regalo,
+.acciones-admin .boton-peligro {
+    margin-top: 0;
+}
+
+.form-borrar {
+    margin: 0;
+}
+
+.boton-bloqueado:hover {
+    background-color:m #495057;
+}

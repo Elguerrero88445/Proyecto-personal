@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ carta.titulo }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+{% extends 'base.html' %}
+{% block titulo %}{{ carta.titulo }}{% endblock %}
+
+{% block contenido %}
+    <h1 class="titulo-animado">{{ carta.titulo }}</h1>
+    <div class="cuerpo-carta">
+        <p style="white-space: pre-line;">{{ carta.contenido }}</p>
+    </div>
+    <a href="{{ url_for('cartas') }}" class="boton-regalo">Volver a las cartas</a>
+
+    {% if current_user.es_admin %}
+        <div class="acciones-admin">
+            <a href="{{ url_for('editar_carta', id=carta.id) }}" class="boton-regalo">Editar</a>
+            <form method="post" action="{{ url_for('borrar_carta', id=carta.id) }}" class="form-borrar"
+                  onsubmit="return confirm('¿Seguro que quieres borrar esta carta? No se puede deshacer.');">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="boton-peligro">Borrar</button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

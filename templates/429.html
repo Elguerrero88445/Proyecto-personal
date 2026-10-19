@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demasiados Intentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+        <h1 class="titulo-animado">Demasiados Intentos</h1>
+        <p class="subtitulo">Has realizado demasiadas solicitudes. Por favor, inténtalo de nuevo más tarde.</p>
+        <a href="{{ url_for('login') }}" class="boton">Volver al inicio de sesión</a>
+</body>
+</html>

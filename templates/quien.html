@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién es mi Ali?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+{% extends 'base.html' %}
+{% block titulo %}¿Quién es mi Ali?{% endblock %}
+
+{% block contenido %}
+    <h1 class="titulo-animado">¿Quién es mi Ali?</h1>
+    <div class="cuerpo-carta">
+        <p class="introduccion">Esto es para la chica que es lo más importante para mí... ❤️</p>
+        <p>Ali, eres la niña más importante que me ha tocado tener y conoces en toda mi vida...</p>
+        <blockquote class="destacado">"Ali, eres la niña más hermosa, linda, chula, guapa y sabrosa que he visto, y veré por mucho tiempo."</blockquote>
+        <p>TE AMO ALI, eso nadie me lo va a quitar. Sigue así hoy, mañana y siempre.</p>
+        <p class="firma">Atentamente: <span>TU PAPOI :)</span></p>
+    </div>
+    <img src="{{ url_for('static', filename='imagenes/ali.png') }}" alt="Foto juntos" class="foto-regalo">
+    <audio src="{{ url_for('static', filename='imagenes/Tu.mp3') }}" autoplay loop controls></audio>
+{% endblock %}
+        <a href="{{ url_for('index') }}" class="boton-regalo">Volver al inicio</a>
+</body>
+</html>

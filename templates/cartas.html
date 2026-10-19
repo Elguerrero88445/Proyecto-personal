@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cartas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block titulo %}Mis cartas{% endblock %}
+
+    {% block contenido %}
+        <h1 class="titulo-animado">Mis Cartas para ti</h1>
+        {% for c in cartas %}
+            {% if c.esta_bloqueada() and not current_user.es_admin %}
+                <p><span class="boton-bloqueado">🔒 Se abre el {{ c.fecha_desbloqueo.strftime('%d/%m/%Y') }}</span></p>
+            {% else %}
+                <p><a class="boton-regalo" href="{{ url_for('carta', id=c.id) }}">{% if c.esta_bloqueada() %}🔒 {% endif %}{{ c.titulo }}</a></p>
+            {% endif %}
+        {% else %}
+            <p>Aún no hay cartas.</p>
+        {% endfor %}
+        </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi vida</Title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css')}}">
+</head>
+<body>
+        {% extends 'base.html' %}
+        {% block titulo %}Para mi vida{% endblock %}
+        {% block contenido %}
+        {% if current_user.is_authenticated %}
+            <p class="contador">Llevamos <strong>{{ dias_juntos }}</strong> días juntos</p>
+            <p class="contador">Nos conocimos hace <strong>{{ dias_conocidos }}</strong> días</p>
+        {% endif %}
+        <h1 class="titulo-animado">Para el amor de toda mi vida</h1>
+        <p class="subtitulo">Te voy a hacer algo tan especial (La luna)</p>        
+        <img src="{{ url_for('static', filename='imagenes/primera.png') }}" alt="Para mi pareja" class="foto-regalo">
+        <audio src="{{ url_for('static', filename='imagenes/Words.mp3')}}" autoplay loop controls></audio>       
+        <a href="{{ url_for('quien') }}" class="boton-regalo">¿Quien es mi ali?</a>
+        {% endblock %}
+</body>
+</html>

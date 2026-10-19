@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Para mi vida{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+    <div class="contenedor-regalo animada">
+        <nav class="menu">
+            <a href="{{ url_for('index') }}">Inicio</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('quien') }}">¿Quien es mi Ali?</a>
+                <a href="{{ url_for('cartas') }}">Mis Cartas</a>
+                {% if current_user.es_admin %}
+                    <a href="{{ url_for('nueva_carta') }}">Crear Carta</a>
+                {% endif %}
+                <form method="post" action="{{ url_for('logout') }}" class="form-menu">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit">Cerrar sesión</button>
+                </form>
+            {% else %}
+                <a href="{{ url_for('login') }}">Iniciar sesión</a>
+            {% endif %}
+        </nav>
+        {% block contenido %}{% endblock %}
+    </div>
+</body>
+</html>

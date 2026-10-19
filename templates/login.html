@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo1.css') }}">
+</head>
+<body>
+{% extends 'base.html' %}
+{% block titulo %}Entrar{% endblock %}
+
+{% block contenido %}
+    <h1 class="titulo-animado">Inicia sesión mi amor</h1>
+    <form method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <p><input type="text" name="usuario" placeholder="Usuario" required
+                  style="padding:10px;width:80%;border-radius:10px;border:1px solid #ccc;"></p>
+        <p><input type="password" name="clave" placeholder="Password" required
+                  style="padding:10px;width:80%;border-radius:10px;border:1px solid #ccc;"></p>
+        <button type="submit" class="boton-regalo" style="border:none;cursor:pointer;">Entrar</button>
+    </form>
+{% endblock %}
+</body>
+</html>
